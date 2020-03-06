@@ -4,6 +4,10 @@
 * Licensed under the MPL License
 */
 
+.kineticjs-content {
+    width: 50% !important;
+}
+
 :root {
     --primary-color: white;
     --secondary-color: rgb(0, 153, 255);

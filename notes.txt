@@ -4,3 +4,6 @@ Adding new pictures...
     - Search for t_animal (or similar) in index.html, follow same format to add custom theme's html
     - Go into puzzle.js. Again, search for t_animal (or similar) and follow same format to add custom theme's js
     - For theme png --> make sure it is 200x200px
+
+Reconfigure settings (grid in background, image in background, etc...)
+    - Search 'change settings' in scripts/puzzle.js

@@ -15,13 +15,20 @@
     "use strict";
     var g_canvas_supported = !!window.HTMLCanvasElement;
 
-    var g_layer = new Kinetic.Layer({name: "g_layer"});
+    var g_layer = new Kinetic.Layer(
+        {
+        name: "g_layer"
+    });
     var g_back_g_layer = new Kinetic.Layer({name: "g_back_g_layer"});
     var g_stage = new Kinetic.Stage({
         container: "container",
-        width: document.getElementById("container").width,
-        height: document.getElementById("container").height
+        width: g_canvas_width,
+        height: g_canvas_height,
+        scaleY: .5,
+        scaleX: .5
+
     });
+
     var iOS = (!!navigator.userAgent.match(/(iPad|iPhone|iPod)/g));
     var url_param;
     var g_lang_ready = false;
@@ -206,7 +213,9 @@
                 width: g_canvas_width,
                 height: g_canvas_height,
                 Image: img,
-                opacity: 0.1
+                opacity: 0.1,
+                scaleY: .5,
+                scaleX: .5
             });
             g_back_g_layer.add(l_back_g_image);
             g_back_g_layer.draw();
@@ -321,7 +330,7 @@
                     //fill: {image: img, offset: [i * g_width, n*g_height] },
                     fillPatternImage: img,
                     fillPatternOffset: [i * g_width, n * g_height],
-                    stroke: "black",
+                    stroke: "transparent",
                     strokeWidth: 4
                 });
                 piece_shape.toImage({
@@ -1455,9 +1464,11 @@
                     document.getElementsByClassName("icon")[0].classList.remove("rotate");
                 });
             });
+
+            // change settings
             if (!localStorageOK) {
-                $b_back_g_grid.checked = true;
-                $b_back_g_image.checked = true;
+                $b_back_g_grid.checked = false;
+                $b_back_g_image.checked = false;
                 $b_rotate.checked = false;
                 $b_sound.checked = true;
                 $b_gold.checked = false;
@@ -1476,9 +1487,9 @@
                     $b_back_g_image.checked = (localStorage.getItem("s_backg_image") === "off");
                 }
                 if (localStorage.getItem("s_rotate") === null) {
-                    $b_rotate.checked = true;
+                    $b_rotate.checked = false;
                 } else {
-                    $b_rotate.checked = (localStorage.getItem("s_rotate") === "on");
+                    $b_rotate.checked = (localStorage.getItem("s_rotate") === "off");
                 }
                 if (localStorage.getItem("s_sound") === null) {
                     $b_sound.checked = true;
@@ -1489,7 +1500,7 @@
                     $b_gold.checked = false;
                     setGold();
                 } else {
-                    $b_gold.checked = (localStorage.getItem("s_gold") === "on");
+                    $b_gold.checked = (localStorage.getItem("s_gold") === "off");
                     setGold();
                 }
                 if (localStorage.getItem("s_theme") === null) {

@@ -24,8 +24,9 @@
         container: "container",
         width: g_canvas_width,
         height: g_canvas_height,
-        scaleY: .5,
-        scaleX: .5
+        //note below
+        // scaleY: .5,
+        // scaleX: .5
 
     });
 
@@ -214,6 +215,7 @@
                 height: g_canvas_height,
                 Image: img,
                 opacity: 0.1,
+                //note below
                 scaleY: .5,
                 scaleX: .5
             });
@@ -331,7 +333,7 @@
                     fillPatternImage: img,
                     fillPatternOffset: [i * g_width, n * g_height],
                     stroke: "transparent",
-                    strokeWidth: 4
+                    strokeWidth: 4,
                 });
                 piece_shape.toImage({
                     // define the size of the new image object
@@ -446,6 +448,7 @@
         g_layer.removeChildren();
         g_back_g_layer.removeChildren();
         g_stage.removeChildren();
+        // note - changing width and height here keeps pieces from moving out of playing field
         g_stage.setWidth(g_canvas_width);
         g_stage.setHeight(g_canvas_height);
         g_startX = 0;
@@ -477,7 +480,7 @@
                 x: 0,
                 y: 0,
                 width: g_imageObj.width,
-                height: g_imageObj.height
+                height: g_imageObj.height,
             },
             Image: g_imageObj
         });
@@ -576,8 +579,10 @@
 
         document.getElementById("container").width = g_windows_width;
         document.getElementById("container").height = g_windows_height;
-        g_canvas_height = g_windows_height;
-        g_canvas_width = g_windows_width;
+        //note - below canvas dimensions reduces/increases size of board
+        g_canvas_height = 600;
+        g_canvas_width = 800;
+        console.log("width: " + g_canvas_width)
         g_lock_portrait = g_portrait;
         if (g_sliderPos !== 0) {
             if (window.devicePixelRatio !== undefined) {
@@ -893,7 +898,8 @@
                     l_sollX = piece.getAbsolutePosition().x + (g_height * zfaktor[n]);
                     l_sollY = piece.getAbsolutePosition().y - (g_width * sfaktor[n]);
                 }
-                if (Math.abs(l_sollX - piece2[0].getAbsolutePosition().x) < g_precision && Math.abs(l_sollY - piece2[0].getAbsolutePosition().y) < g_precision && g_pieceAbsoluteRotation === g_piece2AbsoluteRotation && (piece.getParent().attrs.name === "g_layer" || piece2[0].getParent().attrs.name === "g_layer" || piece.getParent() !== piece2[0].getParent())) {
+                if (Math.abs(l_sollX - piece2[0].getAbsolutePosition().x) < g_precision && Math.abs(l_sollY - piece2[0].getAbsolutePosition().y) < g_precision 
+                        && g_pieceAbsoluteRotation === g_piece2AbsoluteRotation && (piece.getParent().attrs.name === "g_layer" || piece2[0].getParent().attrs.name === "g_layer" || piece.getParent() !== piece2[0].getParent())) {
                     pieceToGroup(piece, piece2[0], l_sollX, l_sollY);
                 }
             }

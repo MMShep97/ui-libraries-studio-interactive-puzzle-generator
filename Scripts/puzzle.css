@@ -50,7 +50,11 @@
     --hover-bottom-gradient-color: white;
     
     /* background gradient */
-    --background-gradient: linear-gradient(rgb(0, 0, 0), rgb(22, 22, 22) 10px, rgb(218, 218, 218) 100%);
+    /* --background-gradient: linear-gradient(rgb(0, 0, 0), rgb(22, 22, 22) 10px, rgb(218, 218, 218) 100%); */
+    --background-gradient: rgb(231, 231, 231);
+
+    /* margin selected to put content from the top near middle */
+    --middle-margin: 180px;
 }
 
 html {
@@ -78,15 +82,17 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: var(--background-gradient);
+    /* background: var(--background-gradient); */
+    /* background: url('../Images/puzzle-background.jpg') center center no-repeat;
+    background-size: cover;
+    filter: blur(5px);
+    backdrop-filter: blur(5px); */
 }
 header {
     margin-top: 10px;
     margin-bottom: 10px;
 }
-.content {
-    margin: 5px;
-}
+
 #game {
     transform: translateX(100vw);
     opacity: 0;
@@ -363,6 +369,7 @@ nav, .mini-buttonlist, .close-button, .xs, .dropdown, .select {
     background-origin: border-box;
     background-clip: content-box, border-box;
     padding: 2px;
+    margin-top: var(--middle-margin);
     width: 400px;
     max-width: calc(100vw - 40px);
 }
@@ -509,17 +516,55 @@ a:active {
 
 /* altes original-css */
 
-canvas {border: 0; margin: 50px 50px; padding: 0;}
+canvas {border: 0; padding: 0;}
 .myButton .ui-btn-inner{padding: 0;}
 .ui-dialog .ui-header .ui-btn-icon-notext {display: none;}
 div.ui-slider-switch {position: absolute; right: 0; width: 20%;}
 div.game {margin: 0; padding: 0;}
-div.container {
-    position: absolute;
-    top: 25%;
-    left: 25%;
-    background-image: url('../Images/game-board.png')
+
+
+/* note -- start of my changes */
+.content-container {
+    width: 100%;
+    height: 100%;
+
 }
+.content {
+    margin: var(--middle-margin) 5px 5px 5px;
+
+}
+
+.puzzle-background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    filter: blur(5px)
+}
+
+.board-container {
+
+}
+div.container {
+    width: 100%;
+    height: 100%;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
+}
+.game-board {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 980px;
+    height: 620px;
+    margin-top: -310px; /* Half the height */
+    margin-left: -490px; /* Half the width */
+}
+
+/* end of changes */
+
 a.bt_small {height: 35px; width: 55px;}
 img.bt_small {margin-top: -5px; margin-left: -10px; height: 25px; width: 25px;}
 a.popup {width: 310px; height: 80px; display: block; text-decoration: none; color: white;}

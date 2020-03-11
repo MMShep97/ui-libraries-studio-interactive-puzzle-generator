@@ -216,8 +216,8 @@
                 Image: img,
                 opacity: 0.1,
                 //note below
-                scaleY: .5,
-                scaleX: .5
+                // scaleY: .5,
+                // scaleX: .5
             });
             g_back_g_layer.add(l_back_g_image);
             g_back_g_layer.draw();
@@ -581,7 +581,7 @@
         document.getElementById("container").height = g_windows_height;
         //note - below canvas dimensions reduces/increases size of board
         g_canvas_height = 600;
-        g_canvas_width = 800;
+        g_canvas_width = 960;
         console.log("width: " + g_canvas_width)
         g_lock_portrait = g_portrait;
         if (g_sliderPos !== 0) {

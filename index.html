@@ -61,149 +61,154 @@
     <source src="Sounds/ding.ogg" type="audio/ogg"/>
 </audio>
 
+<div>
+    <img class="puzzle-background" src="./Images/puzzle-background.jpg"/>
+</div>
 <div class="page" id="title">
-    <div class="content">
-        <header>
-            <img id="img_title" src="Images/ui-libraries-wordmark.png" alt="UI" width="600px"/>
-            <div class="fr">
-                <div class="mini-buttonlist">
-                    <div id="iInfo" class="mini-button">
-                        <img class="mini-img" src="Images/info.svg" alt="Info">
-                    </div>
-                    <div id="iSettings" class="mini-button">
-                        <img class="mini-img" src="Images/settings.svg" alt="Settings">
-                    </div>
-                    <div id="iFullscreen" class="mini-button">
-                        <img id="img_fullscreen" class="mini-img" src="Images/fullscreen.svg" alt="Fullscreen">
+    <div class="content-container">
+        <div class="content">
+            <header>
+                <!-- <img id="img_title" src="Images/ui-libraries-wordmark.png" alt="UI" width="600px"/> -->
+                <div class="fr">
+                    <div class="mini-buttonlist">
+                        <div id="iInfo" class="mini-button">
+                            <img class="mini-img" src="Images/info.svg" alt="Info">
+                        </div>
+                        <div id="iSettings" class="mini-button">
+                            <img class="mini-img" src="Images/settings.svg" alt="Settings">
+                        </div>
+                        <div id="iFullscreen" class="mini-button">
+                            <img id="img_fullscreen" class="mini-img" src="Images/fullscreen.svg" alt="Fullscreen">
+                        </div>
                     </div>
                 </div>
+            </header>
+            <div id="image_offline" class="offline dn cb">
+                <br>
+                <nav id="navOff" class="own-nav">
+                    <div class="list-button selected" data-num="0">
+                        <img id="imageOff" class="own-img button-img" src="Images/photo.svg" alt="play with your own image">
+                    </div>
+                </nav>
+                <br>
             </div>
-        </header>
-        <div id="image_offline" class="offline dn cb">
-            <br>
-            <nav id="navOff" class="own-nav">
-                <div class="list-button selected" data-num="0">
-                    <img id="imageOff" class="own-img button-img" src="Images/photo.svg" alt="play with your own image">
+    
+                <div id='image_slider' class='swipe w100 online'>
+                    <div id="slider_container">
+        
+                        <div class="dn">
+                            <!-- note -- custom image puzzle maker here -->
+                            <nav id="nav0" class="own-nav">
+                                <div class="list-button selected" data-num="0">
+                                    <img id="image0-1" class="own-img button-img" src="Images/photo.svg" alt="play with your own image">
+                                </div>
+                            </nav>
+                        </div>
+                        <div class="db">
+                            <!-- note -- each nav id is one part of the carousel (each list-button has a placeholder loading svg which is replaced with the image
+                                            for each puzzle... the first puzzle is never locked, so there is no accompanying lock svg) -->
+                            <nav id="nav1">
+                                <div class="list-button list-button-33-sel selected" data-num="1">
+                                    <img id="image1-1" class="button-img" src="Images/loading.svg" alt="">
+                                    <img id="medal1-1" class="medal" src="Images/medal1.svg" alt=""/>
+                                </div>
+                                <div class="list-button list-button-33-sel" data-num="2">
+                                    <img id="image1-2" class="button-img" src="Images/loading.svg" alt="">
+                                    <img id="lock1-2" class="lock" src="Images/lock.svg" alt=""/>
+                                    <img id="medal1-2" class="medal" src="Images/medal1.svg" alt=""/>
+                                </div>
+                                <div class="list-button list-button-33-sel" data-num="3">
+                                    <img id="image1-3" class="button-img" src="Images/loading.svg" alt="">
+                                    <img id="lock1-3" class="lock" src="Images/lock.svg" alt=""/>
+                                    <img id="medal1-3" class="medal" src="Images/medal1.svg" alt=""/>
+                                </div>
+                            </nav>
+                        </div>
+                        <div class="dn">
+                            <nav id="nav2">
+                                <div class="list-button list-button-33-sel selected" data-num="1">
+                                    <img id="image2-1" class="button-img" src="Images/dummy.png" alt="">
+                                    <img id="medal2-1" class="medal" src="Images/medal1.svg" alt=""/>
+                                </div>
+                                <div class="list-button list-button-33-sel" data-num="2">
+                                    <img id="image2-2" class="button-img" src="Images/dummy.png" alt="">
+                                    <img id="lock2-2" class="lock" src="Images/lock.svg" alt=""/>
+                                    <img id="medal2-2" class="medal" src="Images/medal1.svg" alt=""/>
+                                </div>
+                                <div class="list-button list-button-33-sel" data-num="3">
+                                    <img id="image2-3" class="button-img" src="Images/dummy.png" alt="">
+                                    <img id="lock2-3" class="lock" src="Images/lock.svg" alt=""/>
+                                    <img id="medal2-3" class="medal" src="Images/medal1.svg" alt=""/>
+                                </div>
+                            </nav>
+                        </div>
+                        <div class="dn">
+                            <nav id="nav3">
+                                <div class="list-button list-button-33-sel selected" data-num="1">
+                                    <img id="image3-1" class="button-img" src="Images/dummy.png" alt="">
+                                    <img id="medal3-1" class="medal" src="Images/medal1.svg" alt=""/>
+                                </div>
+                                <div class="list-button list-button-33-sel" data-num="2">
+                                    <img id="image3-2" class="button-img" src="Images/dummy.png" alt="">
+                                    <img id="lock3-2" class="lock" src="Images/lock.svg" alt=""/>
+                                    <img id="medal3-2" class="medal" src="Images/medal1.svg" alt=""/>
+                                </div>
+                                <div class="list-button list-button-33-sel" data-num="3">
+                                    <img id="image3-3" class="button-img" src="Images/dummy.png" alt="">
+                                    <img id="lock3-3" class="lock" src="Images/lock.svg" alt=""/>
+                                    <img id="medal3-3" class="medal" src="Images/medal1.svg" alt=""/>
+                                </div>
+                            </nav>
+                        </div>
+                        <div class="dn">
+                            <nav id="nav4">
+                                <div class="list-button list-button-33-sel selected" data-num="1">
+                                    <img id="image4-1" class="button-img" src="Images/dummy.png" alt="">
+                                    <img id="medal4-1" class="medal" src="Images/medal1.svg" alt=""/>
+                                </div>
+                                <div class="list-button list-button-33-sel" data-num="2">
+                                    <img id="image4-2" class="button-img" src="Images/dummy.png" alt="">
+                                    <img id="lock4-2" class="lock" src="Images/lock.svg" alt=""/>
+                                    <img id="medal4-2" class="medal" src="Images/medal1.svg" alt=""/>
+                                </div>
+                                <div class="list-button list-button-33-sel" data-num="3">
+                                    <img id="image4-3" class="button-img" src="Images/dummy.png" alt="">
+                                    <img id="lock4-3" class="lock" src="Images/lock.svg" alt=""/>
+                                    <img id="medal4-3" class="medal" src="Images/medal1.svg" alt=""/>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+    
+            <!-- note -- this is the carousel nav area -->
+            <div class="tc online">
+                <div id="b_prev" class="close-button fl">
+                    <img src="Images/prev.svg" alt="prev">
+                </div>
+                <img id="bullets0" src="Images/bullets0o.svg" alt="own image"/>
+                <img id="bullets1" src="Images/bullets1.svg" alt="Page 1"/>
+                <img id="bullets2" src="Images/bullets0.svg" alt="Page 2"/>
+                <img id="bullets3" src="Images/bullets0.svg" alt="Page 3"/>
+                <img id="bullets4" src="Images/bullets0.svg" alt="Page 4"/>
+                <div id="b_next" class="close-button fr">
+                    <img src="Images/next.svg" alt="next">
+                </div>
+            </div>
+    
+            <!-- note -- this is the number of puzzle pieces selection area -->
+            <nav class="cb">
+                <div id="bt_easy" class="list-button list-button-33" data-num="1">
+                    <img id="img_easy" class="button-img bt_diff" src="Images/easy.svg" alt="Easy">
+                </div>
+                <div id="bt_med" class="list-button list-button-33" data-num="2">
+                    <img id="img_med" class="button-img bt_diff" src="Images/medium.svg" alt="Medium">
+                </div>
+                <div id="bt_hard" class="list-button list-button-33" data-num="3">
+                    <img id="img_hard" class="button-img bt_diff" src="Images/hard.svg" alt="Hard">
                 </div>
             </nav>
-            <br>
         </div>
-
-        <div id='image_slider' class='swipe w100 online'>
-            <div id="slider_container">
-
-                <div class="dn">
-                    <!-- note -- custom image puzzle maker here -->
-                    <nav id="nav0" class="own-nav">
-                        <div class="list-button selected" data-num="0">
-                            <img id="image0-1" class="own-img button-img" src="Images/photo.svg" alt="play with your own image">
-                        </div>
-                    </nav>
-                </div>
-                <div class="db">
-                    <!-- note -- each nav id is one part of the carousel (each list-button has a placeholder loading svg which is replaced with the image
-                                    for each puzzle... the first puzzle is never locked, so there is no accompanying lock svg) -->
-                    <nav id="nav1">
-                        <div class="list-button list-button-33-sel selected" data-num="1">
-                            <img id="image1-1" class="button-img" src="Images/loading.svg" alt="">
-                            <img id="medal1-1" class="medal" src="Images/medal1.svg" alt=""/>
-                        </div>
-                        <div class="list-button list-button-33-sel" data-num="2">
-                            <img id="image1-2" class="button-img" src="Images/loading.svg" alt="">
-                            <img id="lock1-2" class="lock" src="Images/lock.svg" alt=""/>
-                            <img id="medal1-2" class="medal" src="Images/medal1.svg" alt=""/>
-                        </div>
-                        <div class="list-button list-button-33-sel" data-num="3">
-                            <img id="image1-3" class="button-img" src="Images/loading.svg" alt="">
-                            <img id="lock1-3" class="lock" src="Images/lock.svg" alt=""/>
-                            <img id="medal1-3" class="medal" src="Images/medal1.svg" alt=""/>
-                        </div>
-                    </nav>
-                </div>
-                <div class="dn">
-                    <nav id="nav2">
-                        <div class="list-button list-button-33-sel selected" data-num="1">
-                            <img id="image2-1" class="button-img" src="Images/dummy.png" alt="">
-                            <img id="medal2-1" class="medal" src="Images/medal1.svg" alt=""/>
-                        </div>
-                        <div class="list-button list-button-33-sel" data-num="2">
-                            <img id="image2-2" class="button-img" src="Images/dummy.png" alt="">
-                            <img id="lock2-2" class="lock" src="Images/lock.svg" alt=""/>
-                            <img id="medal2-2" class="medal" src="Images/medal1.svg" alt=""/>
-                        </div>
-                        <div class="list-button list-button-33-sel" data-num="3">
-                            <img id="image2-3" class="button-img" src="Images/dummy.png" alt="">
-                            <img id="lock2-3" class="lock" src="Images/lock.svg" alt=""/>
-                            <img id="medal2-3" class="medal" src="Images/medal1.svg" alt=""/>
-                        </div>
-                    </nav>
-                </div>
-                <div class="dn">
-                    <nav id="nav3">
-                        <div class="list-button list-button-33-sel selected" data-num="1">
-                            <img id="image3-1" class="button-img" src="Images/dummy.png" alt="">
-                            <img id="medal3-1" class="medal" src="Images/medal1.svg" alt=""/>
-                        </div>
-                        <div class="list-button list-button-33-sel" data-num="2">
-                            <img id="image3-2" class="button-img" src="Images/dummy.png" alt="">
-                            <img id="lock3-2" class="lock" src="Images/lock.svg" alt=""/>
-                            <img id="medal3-2" class="medal" src="Images/medal1.svg" alt=""/>
-                        </div>
-                        <div class="list-button list-button-33-sel" data-num="3">
-                            <img id="image3-3" class="button-img" src="Images/dummy.png" alt="">
-                            <img id="lock3-3" class="lock" src="Images/lock.svg" alt=""/>
-                            <img id="medal3-3" class="medal" src="Images/medal1.svg" alt=""/>
-                        </div>
-                    </nav>
-                </div>
-                <div class="dn">
-                    <nav id="nav4">
-                        <div class="list-button list-button-33-sel selected" data-num="1">
-                            <img id="image4-1" class="button-img" src="Images/dummy.png" alt="">
-                            <img id="medal4-1" class="medal" src="Images/medal1.svg" alt=""/>
-                        </div>
-                        <div class="list-button list-button-33-sel" data-num="2">
-                            <img id="image4-2" class="button-img" src="Images/dummy.png" alt="">
-                            <img id="lock4-2" class="lock" src="Images/lock.svg" alt=""/>
-                            <img id="medal4-2" class="medal" src="Images/medal1.svg" alt=""/>
-                        </div>
-                        <div class="list-button list-button-33-sel" data-num="3">
-                            <img id="image4-3" class="button-img" src="Images/dummy.png" alt="">
-                            <img id="lock4-3" class="lock" src="Images/lock.svg" alt=""/>
-                            <img id="medal4-3" class="medal" src="Images/medal1.svg" alt=""/>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </div>
-
-        <!-- note -- this is the carousel nav area -->
-        <div class="tc online">
-            <div id="b_prev" class="close-button fl">
-                <img src="Images/prev.svg" alt="prev">
-            </div>
-            <img id="bullets0" src="Images/bullets0o.svg" alt="own image"/>
-            <img id="bullets1" src="Images/bullets1.svg" alt="Page 1"/>
-            <img id="bullets2" src="Images/bullets0.svg" alt="Page 2"/>
-            <img id="bullets3" src="Images/bullets0.svg" alt="Page 3"/>
-            <img id="bullets4" src="Images/bullets0.svg" alt="Page 4"/>
-            <div id="b_next" class="close-button fr">
-                <img src="Images/next.svg" alt="next">
-            </div>
-        </div>
-
-        <!-- note -- this is the number of puzzle pieces selection area -->
-        <nav class="cb">
-            <div id="bt_easy" class="list-button list-button-33" data-num="1">
-                <img id="img_easy" class="button-img bt_diff" src="Images/easy.svg" alt="Easy">
-            </div>
-            <div id="bt_med" class="list-button list-button-33" data-num="2">
-                <img id="img_med" class="button-img bt_diff" src="Images/medium.svg" alt="Medium">
-            </div>
-            <div id="bt_hard" class="list-button list-button-33" data-num="3">
-                <img id="img_hard" class="button-img bt_diff" src="Images/hard.svg" alt="Hard">
-            </div>
-        </nav>
     </div>
 
     <!-- note -- this is the question mark popup in the top right corner -->
@@ -260,9 +265,9 @@
     <!-- note -- options area -->
     <div id="iPopupSettings" class="overflow popup-init">
         <div class="popup">
-            <div class="popup-head">
+            <!-- <div class="popup-head">
                 <img class="popup-title" src="Images/title_wide.png" alt="grrd's Puzzle"/>
-            </div>
+            </div> -->
             <div id="iSettingsBody" class="popup-body">
                 <div class="online">
                     <h4 class="ui-title" data-l10n-id="lb_theme">Choose Theme</h4>
@@ -404,10 +409,13 @@
     </div>
 </div>
 <div id="game" class="page" >
-    <div id="container" class="container"></div>
-    <div id="bt_close" class="close-button top-right">
-        <img class="" src="Images/x.svg" alt="close">
-    </div>
+        <img class="game-board" src="./Images/game-board.png" width="600px"/>
+        <div id="container" class="container">
+        <!-- image should be here -->
+        </div>
+        <div id="bt_close" class="close-button top-right">
+            <img class="" src="Images/x.svg" alt="close">
+        </div>
 </div>
 
 <script src="Scripts/kinetic-v4.7.4.min.js"></script>

@@ -1210,7 +1210,7 @@
                 EXIF.getData(evt.target.files[0], function () {
                     g_own_orientation = EXIF.getTag(this, "Orientation");
                 });
-                $("image0-1").src = g_own_image;
+                // $("image0-1").src = g_own_image;
                 $("imageOff").src = g_own_image;
                 content_formatting();
                 setTimeout(function () {
@@ -1239,7 +1239,7 @@
                     });
                     activity.onsuccess = function () {
                         g_own_image = window.URL.createObjectURL(this.result.blob);
-                        $("image0-1").src = g_own_image;
+                        // $("image0-1").src = g_own_image;
                         $("imageOff").src = g_own_image;
                         content_formatting();
                         setTimeout(function () {
@@ -1613,7 +1613,7 @@
             }
             $("select_theme").innerHTML = document.webL10n.get("lb_" + g_theme);
             $("imageOff").setAttribute("alt", document.webL10n.get("lb_image"));
-            $("image0-1").setAttribute("alt", document.webL10n.get("lb_image"));
+            // $("image0-1").setAttribute("alt", document.webL10n.get("lb_image"));
             if (!g_canvas_supported) {
                 $imgHelp.src = "Images/piece_gold.svg";
                 $help.innerHTML = document.webL10n.get("lb_html5");

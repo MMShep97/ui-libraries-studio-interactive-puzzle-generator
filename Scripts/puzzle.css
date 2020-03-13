@@ -524,6 +524,10 @@ div.game {margin: 0; padding: 0;}
 
 
 /* note -- start of my changes */
+.welcome-tab {
+    border: 1px solid red;
+}
+
 .content-container {
     width: 100%;
     height: 100%;

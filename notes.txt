@@ -7,3 +7,25 @@ Adding new pictures...
 
 Reconfigure settings (grid in background, image in background, etc...)
     - Search 'change settings' in scripts/puzzle.js
+
+
+Image Sizes:
+    - theme: 200x200
+    - image1: 1620x1080
+    - image1s: 405x270                 (small)
+    - image1l: 4872x3248               (large - variable dimensions, the larger the better)
+
+-If the width of the viewport is <650px, the following images will be shown:
+    - imagep1: 1080x1620
+    - imagep1s: 270x405                (small)
+    - imagep1l: 3448x5172              (large - variable dimensions, the larger the better)
+
+Adding a game-board background...
+    - Search for game-board in index.html --> add desired image in img tag
+
+Adding a background-image...
+    - Search for puzzle-background in index.html --> add desired image in img tag
+
+Scaling out kineticjs-content && encompassing game-board
+    - In puzzle.js --> Search for (CHANGE CANVAS SIZE) --> change to desired width & height
+    - In puzzle.css --> Search for game-board-wrapper --> change to desired width & height

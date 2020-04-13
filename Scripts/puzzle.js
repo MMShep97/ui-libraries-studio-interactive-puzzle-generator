@@ -579,9 +579,11 @@
 
         document.getElementById("container").width = g_windows_width;
         document.getElementById("container").height = g_windows_height;
-        //note - below canvas dimensions reduces/increases size of board
-        g_canvas_height = 600;
-        g_canvas_width = 960;
+        //note - below canvas dimensions reduces/increases size of board (CHANGE CANVAS SIZE)
+        // g_canvas_height = 600;
+        // g_canvas_width = 960;
+        g_canvas_height = g_windows_height * 0.8;
+        g_canvas_width = g_windows_width * 0.7;
         console.log("width: " + g_canvas_width)
         g_lock_portrait = g_portrait;
         if (g_sliderPos !== 0) {

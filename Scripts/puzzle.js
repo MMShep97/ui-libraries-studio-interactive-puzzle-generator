@@ -1327,18 +1327,18 @@
             $("iSettings").addEventListener("click", function () {
                 if (!g_theme_imgs) {
                     g_theme_imgs = true;
-                    $("t_europe").src = "Images/europe/theme.png";
-                    $("t_africa").src = "Images/africa/theme.png";
-                    $("t_asia").src = "Images/asia/theme.png";
-                    $("t_america").src = "Images/america/theme.png";
-                    $("t_animals").src = "Images/animals/theme.png";
-                    $("t_studio").src = "Images/studio/theme.png";
-                    $("t_flowers").src = "Images/flowers/theme.png";
-                    $("t_tricky").src = "Images/tricky/theme.png";
-                    $("t_mascha").src = "Images/mascha/theme.png";
-                    $("t_mascha2").src = "Images/mascha2/theme.png";
-                    $("t_mascha3").src = "Images/mascha3/theme.png";
-                    $("t_shrek").src = "Images/shrek/theme.png";
+                    // $("t_europe").src = "Images/europe/theme.png";
+                    // $("t_africa").src = "Images/africa/theme.png";
+                    // $("t_asia").src = "Images/asia/theme.png";
+                    // $("t_america").src = "Images/america/theme.png";
+                    // $("t_animals").src = "Images/animals/theme.png";
+                    // $("t_studio").src = "Images/studio/theme.png";
+                    // $("t_flowers").src = "Images/flowers/theme.png";
+                    // $("t_tricky").src = "Images/tricky/theme.png";
+                    // $("t_mascha").src = "Images/mascha/theme.png";
+                    // $("t_mascha2").src = "Images/mascha2/theme.png";
+                    // $("t_mascha3").src = "Images/mascha3/theme.png";
+                    // $("t_shrek").src = "Images/shrek/theme.png";
                 }
                 fShowPopup($popupSettings);
             });
@@ -1481,7 +1481,7 @@
                 $b_sound.checked = true;
                 $b_gold.checked = false;
                 setGold();
-                setTheme("animals");
+                setTheme("studio");
             } else {
                 //localStorage.clear();
                 if (localStorage.getItem("s_back_g_grid") === null) {
@@ -1512,7 +1512,7 @@
                     setGold();
                 }
                 if (localStorage.getItem("s_theme") === null) {
-                    setTheme("animals");
+                    setTheme("studio");
                 } else {
                     setTheme(localStorage.getItem("s_theme"));
                 }
@@ -1587,11 +1587,12 @@
     }());
 
     function popupNew() {
-        if (new Date("05/01/2020") > new Date() && g_theme !== "africa" && localStorageOK && localStorage.getItem("s_new_theme") !== "africa") {
-            $imgHelp.src = "Images/africa/theme.png";
-            $help.innerHTML = document.webL10n.get("lb_new_theme") + " " + document.webL10n.get("lb_africa");
+        let newTheme = 'studio'
+        if (new Date("05/01/2020") > new Date() && g_theme !== `${newTheme}` && localStorageOK && localStorage.getItem("s_new_theme") !== `${newTheme}`) {
+            $imgHelp.src = `Images/${newTheme}/theme.png`;
+            $help.innerHTML = document.webL10n.get("lb_new_theme") + " " + document.webL10n.get(`lb_${newTheme}`);
             fShowPopup($popupHelp);
-            localStorage.setItem("s_new_theme", "africa");
+            localStorage.setItem("s_new_theme", `${newTheme}`);
         }
     }
 
